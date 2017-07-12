@@ -1,7 +1,7 @@
 # App Utility
-An android library which provides utility methods to perform various types of commom actions in app i.e. validations, toasts, widget related utilities etc.
+An android library which provides utility methods to perform various types of common actions in app i.e. validations, toasts, widget related utilities etc.
 
-[![Release](See all releases here)](https:/jitpack.io/#mohitrajput987/app-utility/v1.0)
+[Release](https:/jitpack.io/#mohitrajput987/app-utility/v1.0)
 
 
 
@@ -26,9 +26,13 @@ dependencies {
 ## Details of methods-
 ### 1. Validations-
 a. Email validation
+
 b. Mobile number validation
+
 c. Name validation
+
 d. ABN & ACN number validation
+
 e. Password validation
 
 ### 2. Toast-
@@ -36,4 +40,5 @@ Methods to show toast messages easiliy without writing much code.
 
 ### 3. Common-
 a. Check if internet is available
+
 b. Set max length in EditText at runtime
