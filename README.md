@@ -42,3 +42,6 @@ Methods to show toast messages easiliy without writing much code.
 a. Check if internet is available
 
 b. Set max length in EditText at runtime
+
+## Javadoc
+You can read complete details about all classes and their methods in [javadoc](https://mohitrajput987.github.io/app-utility/)
