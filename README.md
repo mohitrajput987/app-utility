@@ -18,7 +18,22 @@ dependencies {
     compile 'com.github.mohitrajput987:app-utility:v1.1.0'
 }
 ```
+Simple to use like below:
+```
+if(CommonUtils.isNetworkAvailable(context)){
+    // Call web service
+}else{
+    ToastUtils.showShortToast(context, R.string.network_not_available);
+}
+```
 
+```
+if(ValidationUtils.isEmailValid("example@domain.com")){
+    // Perform task
+}else{
+    ToastUtils.showShortToast(context, R.string.invalid_email);
+}
+```
 ## Types of util claases-
 ### 1. Validations-
 Email, mobile, zipcode, name, url etc.
