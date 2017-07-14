@@ -1,5 +1,10 @@
 package com.otb.utility.utils;
 
+import android.telephony.PhoneNumberUtils;
+import android.text.TextUtils;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -18,6 +23,11 @@ public class ValidationUtils {
      * Length of Australian Compnay Number that is 9
      */
     public static final int ACN_LENGTH = 9;
+    /**
+     * Length of Indian zipcode that is 6
+     */
+    public static final int INDIAN_ZIPCODE_LENGTH = 6;
+
     /**
      * Method checks if an email is in valid format.
      *
@@ -39,14 +49,10 @@ public class ValidationUtils {
      * @return boolean true if password is valid, false if invalid
      */
     public static boolean isPasswordValid(String password) {
-//        String expression = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
-//        Pattern pattern = Pattern.compile(expression);
-//        Matcher matcher = pattern.matcher(password);
-//        return matcher.matches();
-        if (password != null && password.length() >= 6) {
-            return true;
-        }
-        return false;
+        String expression = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
+        Pattern pattern = Pattern.compile(expression);
+        Matcher matcher = pattern.matcher(password);
+        return matcher.matches();
     }
 
     /**
@@ -69,7 +75,7 @@ public class ValidationUtils {
      * @return boolean true if name is valid, false if invalid
      */
     public static boolean isMobileNumberValid(String mobileNumber) {
-        if (mobileNumber != null && mobileNumber.length() >= 7 && mobileNumber.length() <= 13) {
+        if (mobileNumber != null && mobileNumber.length() >= 7 && mobileNumber.length() <= 13 && PhoneNumberUtils.isGlobalPhoneNumber(mobileNumber)) {
             return true;
         }
         return false;
@@ -99,5 +105,49 @@ public class ValidationUtils {
             return true;
         }
         return false;
+    }
+
+    /**
+     * Method checks if a URL is valid.
+     *
+     * @param url
+     * @return boolean true if URL is valid, false if invalid
+     */
+    public static boolean isUrlValid(String url) {
+        if (!TextUtils.isEmpty(url)) {
+            try {
+                new URL(url);
+                return true;
+            } catch (MalformedURLException e) {
+                return false;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Method checks if an Indian zipcode is valid.
+     *
+     * @param indianZipcode
+     * @return boolean true if zipcode is valid, false if invalid
+     */
+    public static boolean isIndianZipcodeValid(String indianZipcode) {
+        if (indianZipcode != null && indianZipcode.length() == INDIAN_ZIPCODE_LENGTH) {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Method checks if a USA zipcode is in valid format or not. In US, zipcode can be either of 5-digits or 9 digits with a dash after 5-digits.
+     *
+     * @param usaZipcode
+     * @return boolean true if name is valid, false if invalid
+     */
+    public static boolean isUsaZipcodeValid(String usaZipcode) {
+        String expression = "^[0-9]{5}(?:-[0-9]{4})?$";
+        Pattern pattern = Pattern.compile(expression);
+        Matcher matcher = pattern.matcher(usaZipcode);
+        return matcher.matches();
     }
 }
