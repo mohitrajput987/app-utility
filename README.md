@@ -1,10 +1,6 @@
 # App Utility
 An android library which provides utility methods to perform various types of common actions in app i.e. validations, toasts, widget related utilities etc.
 
-[Release](https:/jitpack.io/#mohitrajput987/app-utility/v1.0)
-
-
-
 ## Integration
 
 Add it to your build.gradle with:
@@ -19,29 +15,25 @@ and:
 
 ```gradle
 dependencies {
-    compile 'com.github.mohitrajput987:app-utility:v1.0'
+    compile 'com.github.mohitrajput987:app-utility:v1.1.0'
 }
 ```
 
-## Details of methods-
+## Types of util claases-
 ### 1. Validations-
-a. Email validation
-
-b. Mobile number validation
-
-c. Name validation
-
-d. ABN & ACN number validation
-
-e. Password validation
+Email, mobile, zipcode, name, url etc.
 
 ### 2. Toast-
 Methods to show toast messages easiliy without writing much code.
 
 ### 3. Common-
-a. Check if internet is available
+Internet availability, max length, bitmap etc.
 
-b. Set max length in EditText at runtime
+### 4. Location-
+Location related methods.
+
+### 5. Shared Preference - 
+Easy way to use shared preference in app.
 
 ## Javadoc
 You can read complete details about all classes and their methods in [javadoc](https://mohitrajput987.github.io/app-utility/)
