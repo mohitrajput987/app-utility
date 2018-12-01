@@ -52,7 +52,7 @@ public class LocationUtils {
     }
 
     /**
-     * Call it if @{@link #isLocationEnabled(Context)} returns false. On clicking yes, it will open location settings to turn it on.
+     * Call it if {@link #isLocationEnabled(Context)} returns false. On clicking yes, it will open location settings to turn it on.
      *
      * @param context
      */
