@@ -1,6 +1,31 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
-group='com.github.mohitrajput987'
+apply plugin: 'com.jfrog.bintray'
+group = 'com.github.mohitrajput987'
+
+ext {
+    bintrayRepo = 'Utility'
+    bintrayName = 'com.otb.utility'
+
+    publishedGroupId = 'com.otb.utility'
+    artifact = 'utility'
+    libraryVersion = '1.0.0'
+
+    libraryName = 'utility'
+    libraryDescription = 'This library contains number of utlity libraries of different categories.'
+
+    siteUrl = 'https://github.com/mohitrajput987/app-utility'
+    gitUrl = 'https://github.com/mohitrajput987/app-utility.git'
+
+    developerId = 'mohitrajput987'
+    developerName = 'Mohit Rajput'
+    developerEmail = 'mohit.rajput987@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.3"
@@ -25,4 +50,15 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
+}
+
+repositories {
+    mavenCentral()
+}
+
+if (project.rootProject.file('local.properties').exists()) {
+//    apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/installv.gradle'
+//    apply from: 'https://raw.githubusercontent.com/numetriclabz/jCenter/master/bintrayv.gradle'
+    //apply from: 'https://raw.githubusercontent.com/JoaquimLey/jcenter-config/master/deploy.gradle'
+    apply from: 'bintray.script'
 }
