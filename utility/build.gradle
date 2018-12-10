@@ -64,5 +64,6 @@ if (project.rootProject.file('local.properties').exists()) {
 //    apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/installv.gradle'
 //    apply from: 'https://raw.githubusercontent.com/numetriclabz/jCenter/master/bintrayv.gradle'
     //apply from: 'https://raw.githubusercontent.com/JoaquimLey/jcenter-config/master/deploy.gradle'
-    apply from: 'bintray.script'
+
 }
+apply from: 'bintray.script'
