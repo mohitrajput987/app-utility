@@ -55,10 +55,10 @@ artifacts {
 }
 
 bintray {
-    user = mohitrajput987
-    key = 0f6982fb9f28076ae25043a3d3e3e8067fc99460
+    user = 'mohitrajput987'
+    key = '0f6982fb9f28076ae25043a3d3e3e8067fc99460'
 
-    pkg { userOrg = ourtechnobytes }
+    pkg { userOrg = 'ourtechnobytes' }
 
     configurations = ['archives']
     pkg {
